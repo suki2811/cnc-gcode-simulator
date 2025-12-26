@@ -10,3 +10,6 @@ export default function App() {
     </div>
   );
 }
+<p style={{ textAlign: "center", color: "#555" }}>
+  Simulated CNC toolpath execution using Three.js (blue path) and a moving tool head (red).
+</p>
