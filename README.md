@@ -34,4 +34,15 @@ This simulator visually verifies tool motion before execution, similar to indust
 ---
 
 ## 📁 Project Structure
-
+cnc-gcode-simulator/
+├── backend/
+│ ├── gcode_parser.cpp
+│ └── server.js
+├── frontend/
+│ └── src/
+│ ├── App.jsx
+│ ├── ToolpathViewer.jsx
+│ └── Animator.jsx
+├── samples/
+│ └── facing.nc
+└── README.md
