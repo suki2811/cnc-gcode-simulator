@@ -80,3 +80,5 @@ export default function Animator() {
   return <div ref={mountRef} style={{ display: "flex", justifyContent: "center" }} />;
 }
 
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
