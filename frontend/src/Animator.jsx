@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-export default function Animator() {
+export default function Animator({ path }) {
   const mountRef = useRef(null);
 
   useEffect(() => {
@@ -18,22 +18,13 @@ export default function Animator() {
     mountRef.current.appendChild(renderer.domElement);
 
     /* ---------------- CNC BED ---------------- */
-    const gridHelper = new THREE.GridHelper(10, 10);
-    scene.add(gridHelper);
-
-    const axesHelper = new THREE.AxesHelper(4);
-    scene.add(axesHelper);
+    scene.add(new THREE.GridHelper(10, 10));
+    scene.add(new THREE.AxesHelper(4));
 
     /* ---------------- TOOLPATH ---------------- */
-    // Zig-zag CNC facing path (hardcoded, human-readable)
-    const pathPoints = [
-      new THREE.Vector3(-3, 0, -3),
-      new THREE.Vector3(3, 0, -3),
-      new THREE.Vector3(3, 0, -2),
-      new THREE.Vector3(-3, 0, -2),
-      new THREE.Vector3(-3, 0, -1),
-      new THREE.Vector3(3, 0, -1),
-    ];
+    const pathPoints = path.map(
+      ([x, y, z]) => new THREE.Vector3(x, y, z)
+    );
 
     const pathGeometry = new THREE.BufferGeometry().setFromPoints(pathPoints);
     const pathMaterial = new THREE.LineBasicMaterial({ color: 0x0000ff });
@@ -41,12 +32,13 @@ export default function Animator() {
     scene.add(toolpath);
 
     /* ---------------- TOOL HEAD ---------------- */
-    const toolGeometry = new THREE.SphereGeometry(0.15, 16, 16);
-    const toolMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-    const tool = new THREE.Mesh(toolGeometry, toolMaterial);
+    const tool = new THREE.Mesh(
+      new THREE.SphereGeometry(0.15, 16, 16),
+      new THREE.MeshBasicMaterial({ color: 0xff0000 })
+    );
     scene.add(tool);
 
-    /* ---------------- ANIMATION LOGIC ---------------- */
+    /* ---------------- ANIMATION ---------------- */
     let segmentIndex = 0;
     let progress = 0;
     const speed = 0.01;
@@ -54,7 +46,6 @@ export default function Animator() {
     function animate() {
       requestAnimationFrame(animate);
 
-      // SAFETY: reset cleanly at end
       if (segmentIndex >= pathPoints.length - 1) {
         segmentIndex = 0;
         progress = 0;
@@ -81,16 +72,12 @@ export default function Animator() {
       mountRef.current.removeChild(renderer.domElement);
       renderer.dispose();
     };
-  }, []);
+  }, [path]); // IMPORTANT: reruns safely when path changes
 
   return (
     <div
       ref={mountRef}
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        marginTop: "20px",
-      }}
+      style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
     />
   );
 }
