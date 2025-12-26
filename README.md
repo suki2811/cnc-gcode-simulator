@@ -227,39 +227,6 @@ cnc-gcode-simulator/
 - **Memory**: ~50-100MB for typical programs
 - **Startup Time**: <2 seconds on modern hardware
 
-## 🤝 Contributing
-
-Contributions are welcome! Here are areas where you can help:
-
-### High Priority
-- [ ] Add canned cycles (G81-G89 drilling cycles)
-- [ ] Implement tool compensation (G41/G42)
-- [ ] Add 4-axis/5-axis rotary support
-- [ ] Material removal simulation with WebGL shaders
-- [ ] Export simulation as video/GIF
-
-### Medium Priority
-- [ ] Machine profiles (save custom work envelopes)
-- [ ] Multi-tool management system
-- [ ] Sub-program support (M98/M99)
-- [ ] Real-time G-code editing with syntax highlighting
-- [ ] Import from popular CAM software (Fusion 360, etc.)
-
-### Nice to Have
-- [ ] Cloud storage for projects
-- [ ] Collaborative editing (multiple users)
-- [ ] Mobile app (React Native)
-- [ ] CNC controller integration (serial/USB communication)
-- [ ] AI-powered optimization suggestions
-
-### How to Contribute
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## 🐛 Known Issues
 
 - Arc interpolation may have slight precision issues for very large radii (>1000mm)
@@ -282,36 +249,6 @@ Contributions are welcome! Here are areas where you can help:
 - [ ] VR/AR visualization mode
 - [ ] Integration with IoT sensors
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**Suki2811**
-- GitHub: [@suki2811](https://github.com/suki2811)
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-- Portfolio: [Your Website](https://yourwebsite.com)
-
-## 🙏 Acknowledgments
-
-- **Three.js Team** for the incredible 3D rendering library
-- **React Team** for the powerful UI framework
-- **CNC Community** for testing and feedback
-- **Open Source Contributors** who inspired this project
-- **Manufacturing Engineers** who provided domain expertise
-
-## 📸 Screenshots
-
-### Main Interface
-![Main Interface](https://via.placeholder.com/800x450/0a0a0a/00ff44?text=3D+Visualization+Interface)
-
-### Collision Detection
-![Collision Detection](https://via.placeholder.com/800x450/0a0a0a/ff3344?text=Collision+Warning+System)
-
-### Statistics Dashboard
-![Statistics](https://via.placeholder.com/800x450/0a0a0a/4a9eff?text=Real-time+Statistics)
 
 ## 💡 Use Cases
 
@@ -340,49 +277,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [CNCjs](https://cnc.js.org/) - Web-based CNC controller
 - [Easel](https://easel.inventables.com/) - Online CAM software
 
-## ❓ FAQ
 
-**Q: Can I use this with my actual CNC machine?**
-A: This is a simulator only. For actual machine control, check out CNCjs or Universal G-Code Sender.
-
-**Q: What file formats are supported?**
-A: .nc, .gcode, .tap, and any plain text file containing G-code.
-
-**Q: Does it work offline?**
-A: Yes! Once loaded, the frontend works completely offline.
-
-**Q: Can I simulate 5-axis machining?**
-A: Currently only 3-axis (X, Y, Z) is supported. 4/5-axis is on the roadmap.
-
-**Q: Is there a mobile version?**
-A: The web version works on mobile browsers, but a native app is planned.
-
-**Q: Can I export the simulation?**
-A: You can save sessions as JSON. Video export is planned for v2.0.
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/suki2811/cnc-gcode-simulator/issues) page
-2. Read the [FAQ](#-faq) section
-3. Create a new issue with:
-   - Detailed description
-   - Steps to reproduce
-   - Screenshots if applicable
-   - G-code sample (if relevant)
-
----
-
-⭐ **Star this repo** if you find it helpful!
-
-🐛 **Report bugs** to help improve the project
-
-🔀 **Fork and contribute** to make it even better
-
-📢 **Share** with fellow engineers and makers
-
----
 
 **Made with ❤️ by mechanical engineers, for engineers**
 
