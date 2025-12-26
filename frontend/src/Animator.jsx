@@ -25,12 +25,13 @@ export default function Animator() {
 
     // --- TOOLPATH POINTS (THIS IS THE CNC MAGIC) ---
     const pathPoints = [
-      new THREE.Vector3(-3, 0, -3),
-      new THREE.Vector3(3, 0, -3),
-      new THREE.Vector3(3, 0, 3),
-      new THREE.Vector3(-3, 0, 3),
-      new THREE.Vector3(-3, 0, -3),
-    ];
+  new THREE.Vector3(-3, 0, -3),
+  new THREE.Vector3(3, 0, -3),
+  new THREE.Vector3(3, 0, -2),
+  new THREE.Vector3(-3, 0, -2),
+  new THREE.Vector3(-3, 0, -1),
+  new THREE.Vector3(3, 0, -1),
+];
 
     // Draw toolpath line
     const geometry = new THREE.BufferGeometry().setFromPoints(pathPoints);
